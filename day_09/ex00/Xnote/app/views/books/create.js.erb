@@ -1,0 +1,12 @@
+ <% if @book.errors.any? %>
+	<% nberr = pluralize(@book.errors.count, "error") %>
+	$("#nberrors").append( "<%= nberr %> prohibited this book from being saved: ");
+	$("#error_explanation").append("<ul>");
+	<% @book.errors.full_messages.each do |message| %>
+ 		$("#error_explanation").append(" <li><%= message %></li> ");
+ 	<% end %>
+	$("#error_explanation").append("</ul>");
+<% else %>
+	$("#books_update").append("<%= escape_javascript(render partial: 'row_of_book', locals: { book: @b } ) %>");
+	$("#form_new").html("");
+<% end %>

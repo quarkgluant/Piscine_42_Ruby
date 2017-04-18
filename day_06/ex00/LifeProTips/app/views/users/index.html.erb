@@ -1,0 +1,5 @@
+<% if @current_user %>
+  Welcome <%= @current_user.name %> ! <%= link_to :Log_out, logout_path, method: :delete %>
+<% else %>
+  Welcome <%= cookies[:animal] %> ! <%= link_to :Sign_in, signin_path %> <%= link_to :Login, login_path %>
+<% end %>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= yield (@title) %></title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet" type="text/css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <div class="navbar navbar-fixed-top navbar-default"><div class="navbar-header"><a href="/" class="navbar-brand cheat-sheet-brand">Rails Beginner Cheat Sheet</a></div>
+
+        <ul class="nav navbar-nav">
+          <li><a href="/console">Console</a></li>
+          <li class="dropdown">
+            <a href="/ruby" class="dropdown-toggle"><b class="caret"></b> Ruby</a>
+            <ul class="dropdown-menu">
+              <li><a href="/ruby_concepts">General Concepts</a></li>
+              <li><a href="/ruby_numbers">Numbers</a></li>
+              <li><a href="/ruby_strings">Strings</a></li>
+              <li><a href="/ruby_arrays">Arrays</a></li>
+              <li><a href="/ruby_hashes">Hashes</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="/rails"><b class="caret"></b> Rails</a>
+            <ul class="dropdown-menu">
+              <li><a href="/rails_folder_structure">Folder Structure</a></li>
+              <li><a href="/rails_commands">Commands</a></li>
+              <li><a href="/rails_erb">ERB: Embedded Ruby</a></li>
+            </ul>
+          </li>
+          <li><a href="/quick_search">Quick Search</a></li>
+          <li><a href="/editor">Editor Tips</a></li>
+          <li><a href="/help">Help</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+
+<div id="content-wrapper">
+  <div class="container ">
+    <section id="main-content">
+      <%= yield %>
+    </section>
+  </div>
+</div>
+
+</body>
+</html>

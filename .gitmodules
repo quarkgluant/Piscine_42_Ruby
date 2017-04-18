@@ -1,0 +1,6 @@
+[submodule "pcadiot"]
+	path = day_00
+	url = vogsphere@vogsphere.42.fr:intra/2017/activities/piscine_ruby_on_rails_day_00/pcadiot
+[submodule "day_01"]
+	path = day_01
+	url = vogsphere@vogsphere.42.fr:intra/2017/activities/piscine_ruby_on_rails_day_01/pcadiot
