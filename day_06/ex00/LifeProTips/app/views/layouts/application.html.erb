@@ -2,11 +2,22 @@
 <html>
 <head>
   <title>LifeProTips</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<%# ----- add these lines here for print flash messages: ----- %>
+  <div>
+    <% if notice %>
+      <%= notice %>
+    <% end %>
+
+    <% if alert %>
+      <%= alert %>
+    <% end %>
+  </div>
+<%# ----- end of added lines for print flash messages ----- %>
 
 <%= yield %>
 
