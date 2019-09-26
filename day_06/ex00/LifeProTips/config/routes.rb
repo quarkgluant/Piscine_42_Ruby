@@ -1,8 +1,25 @@
 Rails.application.routes.draw do
+  # inscription avec le formulaire
+  get 'users/sign_in' => 'users#sign_in', as: :sign_in
+
+  # action POST quand le formulaire est soumis
+  post 'users' => 'users#create'
+
+  # ----- add these lines here for session: -----
+
+  # log in page with form:
+  get '/login' => 'sessions#new', as: :login
+
+  # create (post) action for when log in form is submitted:
+  post '/login' => 'sessions#create'
+
+  # delete action to log out:
+  delete 'users/logout' => 'sessions#destroy', as: :logout
+
+  # ----- end of added lines for session -----
   root 'users#index'
-  resources :users
-  get 'users#login'
-  
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
