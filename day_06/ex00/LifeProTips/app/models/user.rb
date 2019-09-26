@@ -1,3 +1,7 @@
 class User < ActiveRecord::Base
-  validates_uniqueness_of :name
+  has_secure_password
+  validates :name, presence: true, uniqueness: true
+  validates :email, presence: true, uniqueness: true
+  validates :password, length: { minimum: 8 }
 end
+
