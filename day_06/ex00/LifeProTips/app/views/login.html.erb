@@ -1,0 +1,18 @@
+<h1>Par ici l'entrée !</h1>
+
+<%= form_for :login do |f| %>
+  <div class="field">
+    <%= f.label 'nom ou email' %><br/>
+    <%= f.text_field :pseudo, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %><br/>
+    <%= f.password_field :password %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit :Connexion %>
+  </div>
+
+<% end %>
